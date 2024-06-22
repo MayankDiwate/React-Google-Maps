@@ -1,6 +1,8 @@
 import * as L from "leaflet";
 import "leaflet-routing-machine";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
+import "leaflet/dist/images/marker-shadow.png";
+import 'leaflet-defaulticon-compatibility';
 import "leaflet/dist/leaflet.css";
 import React from "react";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
