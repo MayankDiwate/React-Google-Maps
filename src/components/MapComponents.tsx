@@ -1,9 +1,10 @@
 import * as L from "leaflet";
 import "leaflet-routing-machine";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
-import "leaflet/dist/images/marker-shadow.png";
-import 'leaflet-defaulticon-compatibility';
-import "leaflet/dist/leaflet.css";
+import iconRetina from "leaflet/dist/images/marker-icon-2x.png";
+import iconMarker from "leaflet/dist/images/marker-icon.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
+// import "leaflet/dist/leaflet.css";
 import React from "react";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 
@@ -26,6 +27,12 @@ const MapComponent: React.FC<MapProps> = ({
     lng: 72.987609,
   };
 
+  L.Icon.Default.mergeOptions({
+    iconUrl: iconMarker,
+    iconRetinaUrl: iconRetina,
+    shadowUrl: iconShadow,
+  });
+
   return (
     <MapContainer
       center={center}
@@ -39,11 +46,11 @@ const MapComponent: React.FC<MapProps> = ({
       />
 
       {stops.map((stop, i) => (
-        <Marker key={i} position={stop} />
+        <Marker key={i} position={stop} alt="marker" />
       ))}
 
-      <Marker position={origin} />
-      <Marker position={destination} />
+      <Marker position={origin} alt="marker" />
+      <Marker position={destination} alt="marker" />
     </MapContainer>
   );
 };
