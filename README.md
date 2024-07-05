@@ -28,7 +28,7 @@ Follow these steps to set up and run the project locally:
 1. **Clone the repository:**
 
    ```bash [Terminal]
-   git clone https://github.com/your-username/google-maps-clone.git
+   git clone https://github.com/MayankDiwate/google-maps-clone.git
    cd google-maps-clone
    ```
 
